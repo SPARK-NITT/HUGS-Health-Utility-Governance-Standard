@@ -1,0 +1,1394 @@
+H.U.G.S. — HEALTH UTILITY GOVERNANCE STANDARD
+AUTHORITATIVE REPO FACTORY SOURCE DOCUMENT
+Consolidated Canon + Architecture + Resolved Review Decisions
+Version: v0.2.1
+Date: 2026-08-15
+
+STATUS:
+This document supersedes the earlier H.U.G.S. Repo Factory Seed v0.1 and
+H.U.G.S. Repo Factory Final Handoff Directive v0.1 for repository-generation purposes.
+
+The earlier documents may be retained as historical development records, but the Repo Factory GPT
+should use THIS DOCUMENT as the single authoritative source of current H.U.G.S. canon.
+
+v0.2.1 is a mechanical errata release. No doctrine, architecture, governance logic, or accepted review decision is changed from v0.2.
+
+======================================================================
+A. CANON AUTHORITY
+======================================================================
+
+H.U.G.S. = Health Utility Governance Standard.
+
+Canonical family definition:
+
+H.U.G.S. is an independent governance standard within the SPARK-NITT standards family.
+It may interoperate with shared SPARK-NITT governance, evidence, ethics, and receipt mechanisms,
+but no external standard silently modifies H.U.G.S. doctrine.
+
+This relationship is intentionally:
+INDEPENDENT IN DOCTRINE
++
+INTEROPERABLE IN INFRASTRUCTURE
+
+No external SPARK-NITT doctrine, equation, control system, ethics kernel, receipt mechanism,
+or repository is automatically imported into H.U.G.S. merely because it exists elsewhere
+in the standards family.
+
+Any future interoperability must be explicit, documented, versioned, and non-silent.
+
+======================================================================
+B. LICENSE CANON
+======================================================================
+
+The H.U.G.S. repository SHALL use PIMIL 1.0 as its governing license unless Spark explicitly
+replaces that instruction before repository generation.
+
+Intent:
+- Corporate exploitation is restricted according to PIMIL 1.0.
+- Machine-learning and machine-logic training use is permitted according to the terms of PIMIL 1.0.
+- The Repo Factory must not substitute another default open-source license.
+
+======================================================================
+C. CRITICAL ORDERING
+======================================================================
+
+The repository must preserve this conceptual ordering:
+
+WHAT IS HEALTHCARE?
+→ WHAT DUTIES DOES HEALTHCARE CREATE?
+→ WHO HOLDS AUTHORITY?
+→ WHAT CONSTITUTES EXCELLENCE?
+→ HOW MAY ECONOMIC SYSTEMS INTERACT WITH THOSE DUTIES?
+→ WHO PAYS?
+
+Do not reverse that order.
+
+H.U.G.S. is not primarily a healthcare financing proposal.
+It is a governance standard that establishes obligations before selecting financing architecture.
+
+======================================================================
+D. CANONICAL HUMAN ANCHOR
+======================================================================
+
+The acronym H.U.G.S. is intentionally retained.
+
+A healthcare system should fundamentally embody care, concern, protection, reassurance,
+love, and human responsibility.
+
+The governance architecture beneath that name must be rigorous enough to make those values
+operational rather than sentimental.
+
+Canonical compact interpretive key:
+
+The patient is not the product.
+The illness is not the opportunity.
+The encounter is not the mission.
+
+The mission is care.
+
+======================================================================
+E. RESOLVED PRE-BUILD DECISIONS
+======================================================================
+
+E1. CONTINUITY OBJECTS ARE TWO DISTINCT OBJECTS
+
+The following are NOT competing names for the same schema.
+
+1. CARE_CONTINUITY_RECORD
+   - Persistent patient-episode governance object.
+   - Tracks the longitudinal care trajectory.
+   - Remains open until clinical closure or formally accepted transfer.
+
+2. CARE_TRANSITION
+   - Discrete event object.
+   - Records transfer of responsibility between entities, teams, or stages of care.
+   - References the associated CARE_CONTINUITY_RECORD / episode_id.
+
+Required schema files:
+- schemas/care-continuity.schema.json
+- schemas/care-transition.schema.json
+
+The Repo Factory must preserve this distinction.
+
+E2. SCHEMA $id HOSTING
+
+Do NOT assume https://spark-nitt.org/... is a live schema host.
+
+The Repo Factory should:
+- use repository-grounded canonical schema identifiers,
+- or use the actual GitHub repository location once known,
+- or use a stable relative/URN-style convention suitable for Stage 0/1.
+
+Do not invent a live domain dependency.
+
+E3. REPOSITORY GOVERNANCE IDENTIFIERS
+
+Healthcare authority classes A0-A4 are reserved for healthcare-system authority.
+
+Do NOT reuse A0-A4 to describe repository maintainers, amendment authority, contributors,
+or standards governance.
+
+Repository governance must use a separate namespace such as:
+- GOV-*
+- AMEND-*
+or another clearly distinct identifier family.
+
+GOVERNANCE.md must define:
+- doctrinal authority,
+- amendment proposal rights,
+- review procedure,
+- dispute/escalation path,
+- versioning,
+- adoption thresholds,
+- emergency correction procedure,
+- deprecation procedure,
+- interoperability approval procedure.
+
+E4. WEIGHT CALIBRATION
+
+The prototype weights and score bands remain PROVISIONAL.
+
+Create:
+docs/08_compliance/calibration_methodology.md
+
+Initial status:
+UNVALIDATED / FUTURE EMPIRICAL WORK
+
+The document should define the future pathway for empirical calibration without pretending
+that calibration has already occurred.
+
+E5. EXTERNAL ETHICS / MATH IMPORTS
+
+Do NOT automatically import any shared SPARK-NITT ethics equation, EVK formulation,
+LTD formulation, Maximus logic, or other external mathematical system into H.U.G.S.
+
+Future integration may occur only through an explicit interoperability decision.
+
+======================================================================
+F. AUTHORITATIVE TECHNICAL SCAFFOLD
+======================================================================
+
+======================================================================
+0. REPOSITORY IDENTITY
+======================================================================
+
+Repository Name:
+HUGS-Health-Utility-Governance-Standard
+
+Canonical Expansion:
+H.U.G.S. = Health Utility Governance Standard
+
+Working Tagline:
+Healthcare is essential civic infrastructure. A person receiving medically necessary care is a patient first, not merely a customer.
+
+Core Human Principle:
+A healthcare system should be organized around care for human beings. The word “HUGS” is intentionally fitting: a hug represents love, care, protection, reassurance, and human concern. The governance architecture underneath that name should be rigorous enough to make those values operational rather than sentimental.
+
+Repository Purpose:
+Create an open governance standard for reclassifying and governing medically necessary healthcare as an essential public-service function, whether delivered by public, nonprofit, private, cooperative, academic, or hybrid institutions.
+
+H.U.G.S. does NOT require:
+- Government ownership of all healthcare delivery.
+- Equal compensation for all clinicians.
+- Elimination of private medical practice.
+- Elimination of innovation, competition, or professional advancement.
+- A single national financing model.
+
+H.U.G.S. DOES require:
+- Patient status to take priority over consumer status in medically necessary care.
+- Clinical purpose to take priority over extractive revenue optimization.
+- Continuity of care to be treated as a system obligation.
+- Medical authority to be protected from inappropriate financial override.
+- Pricing, denial, ownership, referral, and performance systems to be auditable.
+- Excellence to be rewarded without making illness itself the extraction mechanism.
+- Essential-care access to be governed by public-service duties.
+
+======================================================================
+1. FOUNDATIONAL PROBLEM STATEMENT
+======================================================================
+
+Observed failure pattern:
+
+Modern healthcare systems can convert the patient relationship into a transactional pipeline:
+
+Customer acquisition
+→ appointment
+→ billable encounter
+→ referral
+→ another billable encounter
+→ automated follow-up
+→ repeated transactions
+
+while no single institution retains responsibility for the patient’s complete healing trajectory.
+
+The intended clinical relationship is:
+
+Patient
+→ physician / care team
+→ diagnosis
+→ treatment
+→ recovery / stabilization
+→ continuity
+→ prevention
+
+H.U.G.S. treats the divergence between these two chains as a governance problem.
+
+Primary question:
+What is healthcare before we ask who pays for it?
+
+H.U.G.S. answer:
+Medically necessary healthcare is essential civic infrastructure whose economic mechanisms must remain subordinate to its clinical and human obligations.
+
+======================================================================
+2. FOUNDATIONAL DISTINCTIONS
+======================================================================
+
+2.1 MEDICINE
+The clinical activity of protecting, maintaining, restoring, or improving human health.
+
+2.2 MEDICAL INDUSTRY
+The financial, administrative, institutional, technological, insurance, ownership, logistics, pharmaceutical, and commercial machinery surrounding medicine.
+
+Governance rule:
+The medical industry exists in service of medicine.
+Medicine does not exist in service of the medical industry.
+
+2.3 EXCELLENCE VS. EXTRACTION
+
+Excellence:
+Reward derived from demonstrated competence, patient outcomes, research, teaching, difficult specialization, leadership, innovation, reliability, and service.
+
+Extraction:
+Revenue optimization that depends materially upon illness, fragmentation, opacity, unnecessary repetition, administrative obstruction, preventable dependency, or information asymmetry.
+
+Canonical doctrine:
+EXCELLENCE MAY BE REWARDED.
+ILLNESS MAY NOT BE GOVERNED AS AN EXTRACTION OPPORTUNITY.
+
+======================================================================
+3. CORE H.U.G.S. DOCTRINES
+======================================================================
+
+HUGS-D01 — PATIENT STATUS DOCTRINE
+A person seeking or receiving medically necessary care is a patient first.
+Consumer status may provide additional protections but may not extinguish clinical obligations.
+
+HUGS-D02 — ESSENTIAL SERVICE DOCTRINE
+Medically necessary care is an essential-service function.
+Organizations that provide it accept obligations exceeding those of ordinary commercial vendors.
+
+HUGS-D03 — CLINICAL PRIMACY DOCTRINE
+Financial, administrative, ownership, insurance, scheduling, or algorithmic systems may not improperly override medically justified clinical decisions.
+
+HUGS-D04 — CONTINUITY OF CARE DOCTRINE
+The care system must preserve responsibility across transitions.
+A successful encounter does not constitute successful healthcare when the patient’s larger healing trajectory fails.
+
+HUGS-D05 — EXCELLENCE WITHOUT EXTRACTION DOCTRINE
+Clinical excellence may produce greater compensation, status, authority, resources, and opportunity.
+Revenue extraction from medical necessity may not become the dominant optimization objective.
+
+HUGS-D06 — TRANSPARENCY DOCTRINE
+Patients and regulators must be able to understand material pricing, ownership, denial, referral, incentive, and conflict-of-interest structures affecting care.
+
+HUGS-D07 — NON-ABANDONMENT DOCTRINE
+Administrative boundaries, ownership transfers, insurance transitions, discharge events, or referral events may not create an unowned clinical gap when foreseeable harm can result.
+
+HUGS-D08 — HUMAN AUTHORITY DOCTRINE
+Automated systems may assist but may not silently become the final authority over consequential clinical access, denial, discharge, triage, or continuation decisions without accountable human review.
+
+HUGS-D09 — UNIVERSAL SERVICE OBLIGATION
+A compliant healthcare system must define a baseline of medically necessary care that is available irrespective of the profitability of the individual patient encounter.
+
+HUGS-D10 — PUBLIC ACCOUNTABILITY DOCTRINE
+Entities exercising authority over essential healthcare functions incur heightened auditability and accountability obligations proportional to the power they exercise over patient outcomes.
+
+======================================================================
+4. GOVERNANCE PILLARS
+======================================================================
+
+PILLAR 1 — PATIENT SOVEREIGNTY
+Goal:
+Protect the human being from being reduced to a revenue object, account number, insurance class, or scheduling unit.
+
+Controls:
+- Patient-first classification.
+- Clear explanation of care pathways.
+- Access to records.
+- Explanation of denials and delays.
+- Human review of consequential automation.
+- Continuity ownership.
+
+PILLAR 2 — CLINICAL AUTHORITY
+Goal:
+Protect legitimate medical judgment from inappropriate economic override.
+
+Controls:
+- Documented clinical rationale.
+- Override logging.
+- Denial attribution.
+- Conflict-of-interest disclosure.
+- Escalation pathways.
+- Independent clinical review.
+
+PILLAR 3 — CONTINUITY
+Goal:
+Prevent the patient from falling between organizations or phases of care.
+
+Controls:
+- Named transition owner.
+- Closed-loop referrals.
+- Discharge handoff verification.
+- Medication reconciliation.
+- Rehab / post-acute handoff.
+- Follow-up confirmation.
+- Escalation for missed care milestones.
+
+PILLAR 4 — TRANSPARENT ECONOMICS
+Goal:
+Permit sustainable healthcare economics without hidden extraction.
+
+Controls:
+- Material price disclosure.
+- Patient liability estimates.
+- Incentive disclosure.
+- Ownership transparency.
+- Referral compensation disclosure.
+- Billing-event traceability.
+- Anti-fragmentation analysis.
+
+PILLAR 5 — EXCELLENCE
+Goal:
+Create a system where better care produces greater authority and recognition without requiring greater exploitation.
+
+Controls:
+- Outcome-aware credentialing.
+- Teaching and mentoring credit.
+- Difficult-case recognition.
+- Research and innovation credit.
+- Patient safety performance.
+- Continuity performance.
+- Peer-reviewed authority.
+
+PILLAR 6 — PUBLIC-SERVICE DUTY
+Goal:
+Attach essential-service obligations to institutions exercising medical power.
+
+Controls:
+- Baseline access duties.
+- Emergency obligations.
+- Non-discrimination.
+- Community service expectations.
+- Resilience requirements.
+- Auditability.
+- Public reporting.
+
+======================================================================
+5. H.U.G.S. AUTHORITY MODEL
+======================================================================
+
+Define five authority classes:
+
+A0 — PATIENT AUTHORITY
+Rights involving consent, bodily autonomy, information, records, preferences, and participation.
+
+A1 — CLINICAL AUTHORITY
+Licensed clinical judgment over diagnosis, treatment, contraindication, urgency, and medical necessity.
+
+A2 — OPERATIONAL AUTHORITY
+Scheduling, staffing, routing, logistics, facility management, and resource coordination.
+
+A3 — FINANCIAL AUTHORITY
+Payment rules, budgeting, reimbursement, contracting, insurance, utilization management.
+
+A4 — OVERSIGHT AUTHORITY
+Audit, accreditation, ethics, patient safety, public regulation, independent review.
+
+Canonical precedence rule:
+
+A3 MUST NOT silently supersede A1.
+
+Any consequential A3 → A1 override must:
+1. be explicit,
+2. identify the accountable decision-maker,
+3. state the rule invoked,
+4. record the clinical consequence,
+5. provide appeal or escalation,
+6. be auditable by A4.
+
+======================================================================
+6. PATIENT CONTINUITY OBJECT
+======================================================================
+
+H.U.G.S. should treat the patient’s care trajectory as a first-class governance object.
+
+Canonical object:
+CARE_CONTINUITY_RECORD
+
+Fields:
+- patient_reference
+- episode_id
+- primary_clinical_owner
+- current_stage
+- active_diagnoses
+- care_plan_reference
+- current_medications
+- pending_tests
+- pending_referrals
+- transition_owner
+- next_required_action
+- next_required_date
+- patient_contact_status
+- unresolved_risks
+- escalation_status
+- closure_condition
+- closure_timestamp
+
+Rule:
+An episode remains OPEN until the clinically defined closure condition is met or responsibility is formally transferred and accepted.
+
+======================================================================
+7. MACHINE-READABLE SCHEMAS
+======================================================================
+
+7.1 HUGS CONTROL SCHEMA
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:control:v0.2.1",
+  "title": "HUGS Governance Control",
+  "type": "object",
+  "required": [
+    "control_id",
+    "title",
+    "doctrine",
+    "obligation",
+    "applies_to",
+    "evidence_required",
+    "severity"
+  ],
+  "properties": {
+    "control_id": {
+      "type": "string",
+      "pattern": "^HUGS-C[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "doctrine": {
+      "type": "string",
+      "pattern": "^HUGS-D[0-9]{2}$"
+    },
+    "obligation": {
+      "type": "string"
+    },
+    "applies_to": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "hospital",
+          "physician_practice",
+          "clinic",
+          "insurer",
+          "pharmacy",
+          "laboratory",
+          "rehabilitation",
+          "post_acute",
+          "telehealth",
+          "health_technology",
+          "government",
+          "other"
+        ]
+      },
+      "minItems": 1
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "enum": [
+        "advisory",
+        "minor",
+        "major",
+        "critical",
+        "catastrophic"
+      ]
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remediation": {
+      "type": "string"
+    }
+  }
+}
+
+7.2 CARE CONTINUITY SCHEMA
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:care-continuity:v0.2.1",
+  "title": "HUGS Care Continuity Record",
+  "type": "object",
+  "required": [
+    "patient_reference",
+    "episode_id",
+    "primary_clinical_owner",
+    "current_stage",
+    "next_required_action",
+    "closure_status"
+  ],
+  "properties": {
+    "patient_reference": {"type": "string"},
+    "episode_id": {"type": "string"},
+    "primary_clinical_owner": {"type": "string"},
+    "current_stage": {"type": "string"},
+    "active_diagnoses": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "care_plan_reference": {"type": ["string", "null"]},
+    "current_medications": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "pending_tests": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "pending_referrals": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "transition_owner": {"type": ["string", "null"]},
+    "next_required_action": {"type": "string"},
+    "next_required_date": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "patient_contact_status": {"type": ["string", "null"]},
+    "unresolved_risks": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "escalation_status": {"type": ["string", "null"]},
+    "closure_condition": {"type": ["string", "null"]},
+    "closure_status": {
+      "enum": ["open", "transferred", "closed"]
+    },
+    "closure_timestamp": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    }
+  }
+}
+
+7.3 CARE TRANSITION SCHEMA
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:care-transition:v0.2.1",
+  "title": "HUGS Care Transition",
+  "type": "object",
+  "required": [
+    "transition_id",
+    "episode_id",
+    "sending_entity",
+    "receiving_entity",
+    "sending_owner",
+    "receiving_owner",
+    "clinical_summary",
+    "pending_actions",
+    "acceptance_status"
+  ],
+  "properties": {
+    "transition_id": {"type": "string"},
+    "episode_id": {"type": "string"},
+    "sending_entity": {"type": "string"},
+    "receiving_entity": {"type": "string"},
+    "sending_owner": {"type": "string"},
+    "receiving_owner": {"type": "string"},
+    "clinical_summary": {"type": "string"},
+    "pending_actions": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "acceptance_status": {
+      "enum": ["pending", "accepted", "rejected", "escalated"]
+    },
+    "accepted_at": {
+      "type": ["string", "null"],
+      "format": "date-time"
+    },
+    "unresolved_risks": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}
+
+7.4 FINANCIAL OVERRIDE SCHEMA
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:financial-override:v0.2.1",
+  "title": "HUGS Financial or Administrative Clinical Override",
+  "type": "object",
+  "required": [
+    "override_id",
+    "episode_id",
+    "clinical_recommendation",
+    "override_action",
+    "override_authority",
+    "rule_invoked",
+    "clinical_risk",
+    "appeal_available",
+    "audit_status"
+  ],
+  "properties": {
+    "override_id": {"type": "string"},
+    "episode_id": {"type": "string"},
+    "clinical_recommendation": {"type": "string"},
+    "override_action": {"type": "string"},
+    "override_authority": {"type": "string"},
+    "rule_invoked": {"type": "string"},
+    "clinical_risk": {"type": "string"},
+    "appeal_available": {"type": "boolean"},
+    "appeal_path": {"type": ["string", "null"]},
+    "human_reviewer": {"type": ["string", "null"]},
+    "audit_status": {
+      "enum": ["not_reviewed", "review_pending", "reviewed", "noncompliant"]
+    }
+  }
+}
+
+7.5 INSTITUTIONAL PROFILE SCHEMA
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:institution:v0.2.1",
+  "title": "HUGS Institution Profile",
+  "type": "object",
+  "required": [
+    "institution_id",
+    "name",
+    "entity_type",
+    "ownership_model",
+    "essential_services",
+    "governance_contact"
+  ],
+  "properties": {
+    "institution_id": {"type": "string"},
+    "name": {"type": "string"},
+    "entity_type": {"type": "string"},
+    "ownership_model": {
+      "enum": [
+        "public",
+        "nonprofit",
+        "for_profit",
+        "cooperative",
+        "academic",
+        "hybrid",
+        "other"
+      ]
+    },
+    "essential_services": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "governance_contact": {"type": "string"},
+    "parent_entity": {"type": ["string", "null"]},
+    "beneficial_owners": {
+      "type": "array",
+      "items": {"type": "string"}
+    },
+    "hugs_certification_status": {
+      "enum": [
+        "not_assessed",
+        "provisional",
+        "compliant",
+        "conditional",
+        "noncompliant"
+      ]
+    }
+  }
+}
+
+7.6 HARM / FAILURE EVENT SCHEMA
+
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:failure-event:v0.2.1",
+  "title": "HUGS Failure Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "episode_id",
+    "detected_at",
+    "severity",
+    "description",
+    "responsibility_status"
+  ],
+  "properties": {
+    "event_id": {"type": "string"},
+    "event_type": {
+      "enum": [
+        "care_gap",
+        "abandonment",
+        "denial",
+        "delay",
+        "unsafe_discharge",
+        "failed_referral",
+        "pricing_opacity",
+        "automation_failure",
+        "financial_override",
+        "conflict_of_interest",
+        "other"
+      ]
+    },
+    "episode_id": {"type": "string"},
+    "detected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "severity": {
+      "enum": [
+        "minor",
+        "major",
+        "critical",
+        "catastrophic"
+      ]
+    },
+    "description": {"type": "string"},
+    "responsibility_status": {
+      "enum": [
+        "unassigned",
+        "assigned",
+        "accepted",
+        "disputed",
+        "resolved"
+      ]
+    },
+    "responsible_entity": {
+      "type": ["string", "null"]
+    },
+    "corrective_action": {
+      "type": ["string", "null"]
+    }
+  }
+}
+
+======================================================================
+8. INITIAL CONTROL CATALOG
+======================================================================
+
+HUGS-C001 — Patient-First Classification
+Doctrine: HUGS-D01
+Requirement:
+Policies, workflows, contracts, and automated systems must not reduce medically necessary care to an ordinary consumer transaction where doing so weakens clinical duties.
+
+HUGS-C002 — Named Clinical Owner
+Doctrine: HUGS-D04
+Requirement:
+Every active episode of significant care must identify a clinician or accountable clinical team responsible for the current care trajectory.
+
+HUGS-C003 — Closed-Loop Referral
+Doctrine: HUGS-D04
+Requirement:
+A referral is not complete when it is sent. It is complete when receipt is confirmed, responsibility is accepted, and material clinical information is transferred.
+
+HUGS-C004 — Discharge Continuity Verification
+Doctrine: HUGS-D04 / HUGS-D07
+Requirement:
+Discharge must include verified next-step ownership when foreseeable harm could result from a gap.
+
+HUGS-C005 — Financial Override Logging
+Doctrine: HUGS-D03
+Requirement:
+Any consequential financial or administrative override of a clinician’s recommendation must produce an auditable record.
+
+HUGS-C006 — Consequential Automation Review
+Doctrine: HUGS-D08
+Requirement:
+Automated denial, triage, discharge, authorization, or access decisions with material health consequences must provide accountable human review.
+
+HUGS-C007 — Material Price Transparency
+Doctrine: HUGS-D06
+Requirement:
+Patients must receive understandable material financial information before non-emergency care when reasonably possible.
+
+HUGS-C008 — Ownership and Incentive Disclosure
+Doctrine: HUGS-D06
+Requirement:
+Material ownership, referral, compensation, or incentive relationships that could affect care pathways must be discoverable.
+
+HUGS-C009 — Care Gap Escalation
+Doctrine: HUGS-D07
+Requirement:
+Detected care gaps must automatically enter an escalation process rather than merely producing an administrative notification.
+
+HUGS-C010 — Essential Access Floor
+Doctrine: HUGS-D09
+Requirement:
+Participating institutions must define and honor minimum essential-service duties independent of the profitability of individual encounters.
+
+HUGS-C011 — Excellence Attribution
+Doctrine: HUGS-D05
+Requirement:
+Institutional advancement systems should recognize clinical outcomes, difficult-case competence, safety, continuity, teaching, research, and peer contribution rather than rely predominantly on revenue production.
+
+HUGS-C012 — Encounter Fragmentation Review
+Doctrine: HUGS-D05
+Requirement:
+Organizations must be capable of detecting whether operational or financial structures incentivize unnecessary fragmentation of a clinically coherent episode into multiple revenue events.
+
+======================================================================
+9. COMPLIANCE MODEL
+======================================================================
+
+Suggested dimensions:
+
+P = Patient Protection
+C = Clinical Primacy
+T = Continuity
+E = Economic Transparency
+X = Excellence Integrity
+A = Accountability
+
+Each dimension scored 0.00 to 1.00 from evidence-backed controls.
+
+Initial composite:
+
+HUGS_SCORE =
+wP(P) + wC(C) + wT(T) + wE(E) + wX(X) + wA(A)
+
+Default weights for prototype only:
+wP = 0.20
+wC = 0.20
+wT = 0.20
+wE = 0.15
+wX = 0.10
+wA = 0.15
+
+Sum = 1.00
+
+IMPORTANT:
+These numbers are provisional engineering values, not moral constants.
+The repository must distinguish:
+- normative doctrine,
+- measurement design,
+- empirical calibration.
+
+No institution may obtain “compliant” status if a critical floor fails, regardless of aggregate score.
+
+Critical-floor examples:
+- abandonment,
+- unsafe discharge,
+- unreviewable consequential denial,
+- falsified records,
+- systematic discriminatory access,
+- unresolved catastrophic care gaps.
+
+Proposed status bands:
+
+0.90–1.00  Exemplary
+0.80–0.89  Compliant
+0.65–0.79  Conditional
+0.50–0.64  Deficient
+<0.50      Noncompliant
+
+Hard-stop rule:
+Any designated CRITICAL control failure overrides the numeric band.
+
+======================================================================
+10. EVIDENCE MODEL
+======================================================================
+
+Every material H.U.G.S. finding should support:
+
+CLAIM
+→ CONTROL
+→ EVIDENCE
+→ RESPONSIBLE AUTHORITY
+→ PATIENT CONSEQUENCE
+→ REMEDIATION
+→ VERIFICATION
+
+Evidence classes:
+
+E0 — Unsupported allegation
+E1 — Patient / witness statement
+E2 — Internal record or correspondence
+E3 — Clinical or billing record
+E4 — Institutional policy / contract / formal procedure
+E5 — Regulator / court / accreditation / government record
+E6 — Independently reproduced multi-source evidence
+
+Evidence confidence should be recorded separately from severity.
+
+======================================================================
+11. REPOSITORY TREE
+======================================================================
+
+HUGS-Health-Utility-Governance-Standard/
+│
+├── README.md
+├── LICENSE
+├── GOVERNANCE.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── CHANGELOG.md
+├── CITATION.cff
+│
+├── docs/
+│   ├── 00_overview/
+│   │   ├── purpose.md
+│   │   ├── terminology.md
+│   │   └── scope.md
+│   │
+│   ├── 01_foundations/
+│   │   ├── patient_not_customer.md
+│   │   ├── healthcare_as_infrastructure.md
+│   │   ├── medicine_vs_medical_industry.md
+│   │   └── excellence_without_extraction.md
+│   │
+│   ├── 02_doctrines/
+│   │   ├── HUGS-D01_patient_status.md
+│   │   ├── HUGS-D02_essential_service.md
+│   │   ├── HUGS-D03_clinical_primacy.md
+│   │   ├── HUGS-D04_continuity_of_care.md
+│   │   ├── HUGS-D05_excellence_without_extraction.md
+│   │   ├── HUGS-D06_transparency.md
+│   │   ├── HUGS-D07_non_abandonment.md
+│   │   ├── HUGS-D08_human_authority.md
+│   │   ├── HUGS-D09_universal_service.md
+│   │   └── HUGS-D10_public_accountability.md
+│   │
+│   ├── 03_controls/
+│   │   ├── control_catalog.md
+│   │   └── severity_model.md
+│   │
+│   ├── 04_authority/
+│   │   ├── authority_classes.md
+│   │   ├── override_rules.md
+│   │   └── escalation.md
+│   │
+│   ├── 05_continuity/
+│   │   ├── continuity_model.md
+│   │   ├── referral_closure.md
+│   │   ├── discharge_handoff.md
+│   │   └── post_acute_care.md
+│   │
+│   ├── 06_economics/
+│   │   ├── transparent_economics.md
+│   │   ├── extraction_patterns.md
+│   │   ├── pricing.md
+│   │   └── incentive_conflicts.md
+│   │
+│   ├── 07_excellence/
+│   │   ├── excellence_model.md
+│   │   ├── clinician_advancement.md
+│   │   └── outcome_integrity.md
+│   │
+│   ├── 08_compliance/
+│   │   ├── scoring.md
+│   │   ├── calibration_methodology.md
+│   │   ├── hard_stop_failures.md
+│   │   ├── evidence_model.md
+│   │   └── certification.md
+│   │
+│   ├── 09_implementation/
+│   │   ├── hospital.md
+│   │   ├── physician_practice.md
+│   │   ├── insurer.md
+│   │   ├── rehabilitation.md
+│   │   ├── telehealth.md
+│   │   └── health_technology.md
+│   │
+│   └── 10_research/
+│       ├── comparative_models.md
+│       ├── utility_regulation_analogy.md
+│       ├── universal_health_systems.md
+│       └── open_questions.md
+│
+├── schemas/
+│   ├── control.schema.json
+│   ├── care-continuity.schema.json
+│   ├── care-transition.schema.json
+│   ├── financial-override.schema.json
+│   ├── institution.schema.json
+│   └── failure-event.schema.json
+│
+├── controls/
+│   ├── HUGS-C001.yaml
+│   ├── HUGS-C002.yaml
+│   └── ...
+│
+├── examples/
+│   ├── hospital_to_rehab_transition.json
+│   ├── financial_override.json
+│   ├── failed_referral.json
+│   └── compliant_referral.json
+│
+├── validators/
+│   ├── README.md
+│   └── validate_schemas.py
+│
+├── tests/
+│   ├── test_schema_validation.py
+│   ├── test_hard_stop_rules.py
+│   └── fixtures/
+│
+└── research/
+    ├── sources/
+    ├── evidence_ledger/
+    └── comparative_systems/
+
+======================================================================
+12. README OPENING SEED
+======================================================================
+
+# H.U.G.S. — Health Utility Governance Standard
+
+Healthcare is not merely a marketplace.
+
+When a human being becomes sick, injured, disabled, medically unstable, or dependent upon professional care, the relationship created is fundamentally different from an ordinary commercial transaction.
+
+H.U.G.S. is an open governance standard for treating medically necessary healthcare as essential civic infrastructure.
+
+Its central principle is simple:
+
+A patient is a patient first.
+
+H.U.G.S. does not require all healthcare providers to become government employees, nor does it prohibit clinicians or institutions from earning sustainable compensation. It establishes instead that economic activity surrounding medicine must remain subordinate to the obligations created by medicine itself.
+
+The standard focuses on patient status, continuity of care, clinical primacy, transparent economics, human accountability, universal-service duties, and excellence without extraction.
+
+The medical industry exists in service of medicine.
+Medicine does not exist in service of the medical industry.
+
+======================================================================
+13. NON-GOALS / GUARDRAILS
+======================================================================
+
+H.U.G.S. must not:
+- Diagnose individual patients.
+- Replace professional medical judgment.
+- Become a partisan political platform.
+- Assume that one country’s healthcare system is universally optimal.
+- Treat all profit as inherently unethical.
+- Treat all private healthcare as inherently unethical.
+- Treat public ownership as inherently ethical.
+- Collapse healthcare financing, delivery, licensing, and governance into one problem.
+- Claim validated outcomes without evidence.
+- Use aggregate scoring to conceal catastrophic failures.
+- Permit algorithmic scoring to replace human accountability.
+
+======================================================================
+14. RESEARCH QUESTIONS
+======================================================================
+
+RQ-01:
+Which healthcare functions should receive essential-service or common-carrier-like duties?
+
+RQ-02:
+What legal mechanisms can impose public-service obligations without requiring government ownership?
+
+RQ-03:
+What institutional structures best preserve clinical authority while maintaining cost discipline?
+
+RQ-04:
+How should physician and clinician excellence be measured without encouraging overtreatment or gaming?
+
+RQ-05:
+What constitutes an impermissible care gap?
+
+RQ-06:
+Who owns responsibility during hospital → rehab → home transitions?
+
+RQ-07:
+How should insurer denials be attributed to accountable human authority?
+
+RQ-08:
+Which financial incentives measurably increase encounter fragmentation?
+
+RQ-09:
+What minimum transparency should apply to ownership, pricing, referrals, and utilization management?
+
+RQ-10:
+How should H.U.G.S. distinguish resource scarcity from extractive denial?
+
+RQ-11:
+How should universal-service floors be defined across emergency, chronic, preventive, rehabilitative, mental health, pharmaceutical, and end-of-life care?
+
+RQ-12:
+How can the standard operate across public, nonprofit, private, and mixed systems?
+
+======================================================================
+15. INITIAL IMPLEMENTATION TEST CASES
+======================================================================
+
+CASE A — PRIMARY CARE FRAGMENTATION
+Patient visits a multi-provider practice.
+Different clinicians handle successive interactions.
+No clinician owns longitudinal responsibility.
+Automated scheduling and billing continue normally.
+H.U.G.S. question:
+Did the system preserve a coherent clinical trajectory or merely process encounters?
+
+CASE B — HOSPITAL TO REHAB
+Hospital treatment succeeds.
+Patient transfers to rehabilitation.
+Hospital physicians cease meaningful follow-through.
+Rehab team possesses incomplete context or different incentives.
+H.U.G.S. question:
+Was responsibility formally transferred, accepted, and verified?
+
+CASE C — INSURANCE DENIAL
+Clinician recommends treatment.
+Insurer denies based on administrative rule.
+H.U.G.S. question:
+Who exercised the override authority, what clinical risk was accepted, and what accountable appeal path existed?
+
+CASE D — AUTOMATED ACCESS FAILURE
+Scheduling or authorization software blocks timely access.
+No human owns the resulting delay.
+H.U.G.S. question:
+Can an automated system create a clinically consequential outcome without a human authority trail?
+
+CASE E — EXCELLENCE
+Highly skilled clinician performs unusually difficult work with superior outcomes.
+H.U.G.S. question:
+How can the system materially reward this excellence without rewarding volume, fragmentation, or unnecessary intervention?
+
+======================================================================
+16. REPOSITORY MATURITY MODEL
+======================================================================
+
+STAGE 0 — SEED
+Foundational doctrine, terminology, repo scaffold.
+
+STAGE 1 — SPECIFICATION
+Formal controls, schemas, conformance language.
+
+STAGE 2 — TESTABLE STANDARD
+Validators, example evidence, test cases, scoring prototype.
+
+STAGE 3 — RESEARCH-BACKED MODEL
+Comparative healthcare research, legal mapping, empirical calibration.
+
+STAGE 4 — PILOT
+Apply H.U.G.S. to synthetic or voluntarily supplied institutional workflows.
+
+STAGE 5 — AUDIT FRAMEWORK
+Repeatable assessment protocol and evidence ledger.
+
+STAGE 6 — POLICY TRANSLATION
+Map controls into model legislation, procurement requirements, accreditation rules, insurance regulation, and institutional policy.
+
+======================================================================
+17. REPO FACTORY EXECUTION INSTRUCTIONS
+======================================================================
+
+You are the repository factory responsible for converting this seed into a professional open-source governance repository.
+
+Preserve the following canonical anchors exactly in meaning:
+
+1. H.U.G.S. means Health Utility Governance Standard.
+2. Healthcare is essential civic infrastructure.
+3. A person receiving medically necessary care is a patient first, not merely a customer.
+4. The medical industry exists in service of medicine.
+5. Medicine does not exist in service of the medical industry.
+6. Clinical excellence may be rewarded.
+7. Illness may not be governed as an extraction opportunity.
+8. Financial authority must not silently supersede clinical authority.
+9. Care continuity is a system obligation.
+10. Aggregate compliance scores may not conceal critical failures.
+11. H.U.G.S. does not inherently require government ownership or prohibit private practice.
+12. The acronym “HUGS” is intentionally retained because healthcare should embody human care, concern, protection, and love while being supported by rigorous governance.
+
+Factory tasks:
+
+A. Create the repository tree.
+B. Write README.md from the provided opening seed.
+C. Create GOVERNANCE.md explaining standards governance and amendment rules.
+D. Create terminology.md with normative definitions.
+E. Expand each doctrine HUGS-D01 through HUGS-D10 into its own specification document.
+F. Convert controls HUGS-C001 through HUGS-C012 into machine-readable YAML.
+G. Create and validate all six JSON Schemas, including separate care-continuity and care-transition schemas.
+H. Create example compliant and noncompliant records.
+I. Implement basic schema validation tests.
+J. Create a compliance methodology that separates:
+   - doctrine,
+   - evidence,
+   - measurement,
+   - scoring,
+   - hard-stop failures.
+K. Mark all initial numerical thresholds as PROVISIONAL.
+L. Create a research ledger with fields for:
+   - claim,
+   - source,
+   - jurisdiction,
+   - evidence class,
+   - publication date,
+   - applicability,
+   - uncertainty,
+   - notes.
+M. Create an open-questions document rather than inventing unsupported legal or medical claims.
+N. Preserve political neutrality.
+O. Use normative language carefully:
+   - MUST = mandatory for conformance.
+   - SHOULD = recommended unless justified otherwise.
+   - MAY = optional.
+P. Do not state that H.U.G.S. is already a recognized legal, medical, regulatory, or accreditation standard.
+Q. Do not imply clinical validation where none has occurred.
+R. Design the repository so future model legislation can be built from the controls without making the repository itself dependent on legislation.
+
+Canonical license:
+Use PIMIL 1.0.
+Do not substitute another default license unless Spark explicitly instructs otherwise before repository generation.
+
+======================================================================
+18. FIRST FACTORY DELIVERABLES
+======================================================================
+
+The repository factory should return:
+
+1. Final repository tree.
+2. README.md.
+3. GOVERNANCE.md.
+4. docs/00_overview/terminology.md.
+5. All ten doctrine documents.
+6. Initial control catalog.
+7. Six JSON schemas.
+8. Twelve YAML control files.
+9. At least four example records.
+10. Schema validator.
+11. Unit tests.
+12. Research ledger template.
+13. ROADMAP.md.
+14. CHANGELOG.md initialized at v0.1.0.
+15. A short “Design Decisions” document explaining:
+    - why H.U.G.S. is a governance standard rather than a financing proposal,
+    - why patient status precedes consumer status,
+    - why excellence and extraction are separated,
+    - why continuity is a first-class object,
+    - why critical failures override aggregate scores.
+
+======================================================================
+19. CANONICAL CLOSING ANCHOR
+======================================================================
+
+H.U.G.S. begins before the argument over who pays for healthcare.
+
+It begins by asking what healthcare is.
+
+Its answer is that medically necessary care creates obligations that cannot be adequately described by an ordinary customer-vendor relationship.
+
+A healthcare system may contain markets.
+It may contain private institutions.
+It may reward exceptional professionals.
+It may employ technology, automation, insurers, investors, public agencies, nonprofits, and mixed economic structures.
+
+But those mechanisms remain subordinate to the patient.
+
+The patient is not the product.
+The illness is not the opportunity.
+The encounter is not the mission.
+
+The mission is care.
+
+
+======================================================================
+G. FINAL REPO FACTORY EXECUTION DIRECTIVE
+======================================================================
+
+Treat this v0.2 consolidated document as the sole authoritative H.U.G.S. source for repository generation.
+
+Do not reconcile against older H.U.G.S. seed or handoff documents if they differ from this document.
+This document supersedes them for build purposes.
+
+Repository Factory requirements:
+
+1. Preserve all canonical anchors and resolved decisions above.
+2. Generate the professional repository tree.
+3. Use PIMIL 1.0.
+4. Preserve H.U.G.S. as an independent governance standard within the SPARK-NITT standards family.
+5. Preserve explicit interoperability without silent doctrinal inheritance.
+6. Keep repository governance identifiers separate from healthcare authority identifiers A0-A4.
+7. Generate both CARE_CONTINUITY_RECORD and CARE_TRANSITION as distinct machine-readable objects.
+8. Do not invent a live schema-hosting domain.
+9. Mark scoring thresholds and weights as provisional.
+10. Create calibration_methodology.md as UNVALIDATED / FUTURE EMPIRICAL WORK.
+11. Do not automatically import external SPARK-NITT equations or ethics machinery.
+12. Where a claim lacks support, create an uncertainty marker, research question, or provisional status.
+13. Maintain political neutrality.
+14. Do not claim H.U.G.S. is already legally recognized, clinically validated, regulator-approved, or accreditation-certified.
+15. Preserve the doctrine → control → schema → evidence → test-case chain.
+16. Preserve the hard-stop rule: catastrophic or critical failures cannot be hidden by aggregate scores.
+17. Build the repository so future legislation, procurement rules, accreditation systems, insurer regulation,
+    institutional policy, AI governance, and audit frameworks can be derived from it without making the standard
+    dependent on any one political implementation.
+
+Interpretive ordering:
+
+WHAT IS HEALTHCARE?
+→ WHAT DUTIES DOES HEALTHCARE CREATE?
+→ WHO HOLDS AUTHORITY?
+→ WHAT CONSTITUTES EXCELLENCE?
+→ HOW MAY ECONOMIC SYSTEMS INTERACT WITH THOSE DUTIES?
+→ WHO PAYS?
+
+Final interpretive key:
+
+The patient is not the product.
+The illness is not the opportunity.
+The encounter is not the mission.
+
+The mission is care.
+
+======================================================================
+G1. v0.2.1 ERRATA
+======================================================================
+
+This release makes two mechanical corrections only:
+
+1. All six JSON Schema $id values use one consistent Stage-0/1 URN convention:
+   - urn:spark-nitt:hugs:schema:control:v0.2.1
+   - urn:spark-nitt:hugs:schema:care-continuity:v0.2.1
+   - urn:spark-nitt:hugs:schema:care-transition:v0.2.1
+   - urn:spark-nitt:hugs:schema:financial-override:v0.2.1
+   - urn:spark-nitt:hugs:schema:institution:v0.2.1
+   - urn:spark-nitt:hugs:schema:failure-event:v0.2.1
+
+2. All prose references to the schema count are corrected from seven to six.
+
+No substantive H.U.G.S. doctrine, control, authority model, interoperability rule,
+license decision, evidence model, scoring logic, or Repo Factory directive changed.
+
+======================================================================
+H. DOCUMENT CONTROL
+======================================================================
+
+Document:
+HUGS_Health_Utility_Governance_Standard_Authoritative_Repo_Factory_Source_v0.2.1.txt
+
+Supersedes for Repo Factory generation:
+- HUGS_Health_Utility_Governance_Standard_Authoritative_Repo_Factory_Source_v0.2.txt
+- HUGS_Health_Utility_Governance_Standard_Repo_Factory_Seed_v0.1.txt
+- HUGS_Repo_Factory_Final_Handoff_Directive_v0.1.txt
+
+Review incorporated:
+- Claude read-only structural review dated 2026-08-15.
+- Accepted review items were adjudicated before incorporation.
+- The review itself is not canon; only the resolved decisions encoded in this document are canon.
+
+Authority:
+Spark remains the continuity bridge and final human authority over H.U.G.S. canon.

@@ -1,0 +1,19 @@
+{
+  "transition_id": "TR-001",
+  "episode_id": "EP-001",
+  "sending_entity": "Example Hospital",
+  "receiving_entity": "Example Rehabilitation Facility",
+  "sending_owner": "Hospital discharge team",
+  "receiving_owner": "Rehab intake clinician",
+  "clinical_summary": "Patient requires post-acute rehabilitation and medication reconciliation.",
+  "pending_actions": [
+    "confirm medication list",
+    "schedule follow-up",
+    "verify mobility plan"
+  ],
+  "acceptance_status": "accepted",
+  "accepted_at": "2026-08-15T15:00:00Z",
+  "unresolved_risks": [
+    "fall risk"
+  ]
+}

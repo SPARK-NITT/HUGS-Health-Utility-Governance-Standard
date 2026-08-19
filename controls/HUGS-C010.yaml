@@ -1,0 +1,12 @@
+control_id: HUGS-C010
+title: "Essential Access Floor"
+doctrine: "HUGS-D09"
+obligation: "Participating institutions must define and honor minimum essential-service duties independent of the profitability of individual encounters."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: critical
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

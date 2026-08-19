@@ -1,0 +1,12 @@
+control_id: HUGS-C008
+title: "Ownership and Incentive Disclosure"
+doctrine: "HUGS-D06"
+obligation: "Material ownership, referral, compensation, or incentive relationships that could affect care pathways must be discoverable."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: major
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

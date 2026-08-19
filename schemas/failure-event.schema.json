@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:failure-event:v0.2.1",
+  "title": "HUGS Failure Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "episode_id",
+    "detected_at",
+    "severity",
+    "description",
+    "responsibility_status"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "enum": [
+        "care_gap",
+        "abandonment",
+        "denial",
+        "delay",
+        "unsafe_discharge",
+        "failed_referral",
+        "pricing_opacity",
+        "automation_failure",
+        "financial_override",
+        "conflict_of_interest",
+        "other"
+      ]
+    },
+    "episode_id": {
+      "type": "string"
+    },
+    "detected_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "severity": {
+      "enum": [
+        "minor",
+        "major",
+        "critical",
+        "catastrophic"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "responsibility_status": {
+      "enum": [
+        "unassigned",
+        "assigned",
+        "accepted",
+        "disputed",
+        "resolved"
+      ]
+    },
+    "responsible_entity": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "corrective_action": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

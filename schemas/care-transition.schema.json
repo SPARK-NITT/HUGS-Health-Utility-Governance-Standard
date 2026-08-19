@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:care-transition:v0.2.1",
+  "title": "HUGS Care Transition",
+  "type": "object",
+  "required": [
+    "transition_id",
+    "episode_id",
+    "sending_entity",
+    "receiving_entity",
+    "sending_owner",
+    "receiving_owner",
+    "clinical_summary",
+    "pending_actions",
+    "acceptance_status"
+  ],
+  "properties": {
+    "transition_id": {
+      "type": "string"
+    },
+    "episode_id": {
+      "type": "string"
+    },
+    "sending_entity": {
+      "type": "string"
+    },
+    "receiving_entity": {
+      "type": "string"
+    },
+    "sending_owner": {
+      "type": "string"
+    },
+    "receiving_owner": {
+      "type": "string"
+    },
+    "clinical_summary": {
+      "type": "string"
+    },
+    "pending_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "acceptance_status": {
+      "enum": [
+        "pending",
+        "accepted",
+        "rejected",
+        "escalated"
+      ]
+    },
+    "accepted_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "unresolved_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

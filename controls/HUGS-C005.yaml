@@ -1,0 +1,12 @@
+control_id: HUGS-C005
+title: "Financial Override Logging"
+doctrine: "HUGS-D03"
+obligation: "Any consequential financial or administrative override of a clinician’s recommendation must produce an auditable record."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: critical
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:institution:v0.2.1",
+  "title": "HUGS Institution Profile",
+  "type": "object",
+  "required": [
+    "institution_id",
+    "name",
+    "entity_type",
+    "ownership_model",
+    "essential_services",
+    "governance_contact"
+  ],
+  "properties": {
+    "institution_id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "entity_type": {
+      "type": "string"
+    },
+    "ownership_model": {
+      "enum": [
+        "public",
+        "nonprofit",
+        "for_profit",
+        "cooperative",
+        "academic",
+        "hybrid",
+        "other"
+      ]
+    },
+    "essential_services": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "governance_contact": {
+      "type": "string"
+    },
+    "parent_entity": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "beneficial_owners": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "hugs_certification_status": {
+      "enum": [
+        "not_assessed",
+        "provisional",
+        "compliant",
+        "conditional",
+        "noncompliant"
+      ]
+    }
+  }
+}

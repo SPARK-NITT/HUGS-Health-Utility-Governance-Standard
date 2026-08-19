@@ -1,0 +1,13 @@
+{
+  "override_id": "OVR-001",
+  "episode_id": "EP-002",
+  "clinical_recommendation": "Clinician recommended continued therapy.",
+  "override_action": "Administrative denial pending review.",
+  "override_authority": "Example utilization management unit",
+  "rule_invoked": "Plan rule example",
+  "clinical_risk": "Possible deterioration if therapy is interrupted.",
+  "appeal_available": true,
+  "appeal_path": "Example appeal route",
+  "human_reviewer": "Reviewer ID withheld",
+  "audit_status": "review_pending"
+}

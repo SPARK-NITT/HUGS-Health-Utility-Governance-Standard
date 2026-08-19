@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:control:v0.2.1",
+  "title": "HUGS Governance Control",
+  "type": "object",
+  "required": [
+    "control_id",
+    "title",
+    "doctrine",
+    "obligation",
+    "applies_to",
+    "evidence_required",
+    "severity"
+  ],
+  "properties": {
+    "control_id": {
+      "type": "string",
+      "pattern": "^HUGS-C[0-9]{3}$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "doctrine": {
+      "type": "string",
+      "pattern": "^HUGS-D[0-9]{2}$"
+    },
+    "obligation": {
+      "type": "string"
+    },
+    "applies_to": {
+      "type": "array",
+      "items": {
+        "enum": [
+          "hospital",
+          "physician_practice",
+          "clinic",
+          "insurer",
+          "pharmacy",
+          "laboratory",
+          "rehabilitation",
+          "post_acute",
+          "telehealth",
+          "health_technology",
+          "government",
+          "other"
+        ]
+      },
+      "minItems": 1
+    },
+    "evidence_required": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "severity": {
+      "enum": [
+        "advisory",
+        "minor",
+        "major",
+        "critical",
+        "catastrophic"
+      ]
+    },
+    "exceptions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "remediation": {
+      "type": "string"
+    }
+  }
+}

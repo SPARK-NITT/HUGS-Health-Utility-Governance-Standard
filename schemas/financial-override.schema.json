@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:financial-override:v0.2.1",
+  "title": "HUGS Financial or Administrative Clinical Override",
+  "type": "object",
+  "required": [
+    "override_id",
+    "episode_id",
+    "clinical_recommendation",
+    "override_action",
+    "override_authority",
+    "rule_invoked",
+    "clinical_risk",
+    "appeal_available",
+    "audit_status"
+  ],
+  "properties": {
+    "override_id": {
+      "type": "string"
+    },
+    "episode_id": {
+      "type": "string"
+    },
+    "clinical_recommendation": {
+      "type": "string"
+    },
+    "override_action": {
+      "type": "string"
+    },
+    "override_authority": {
+      "type": "string"
+    },
+    "rule_invoked": {
+      "type": "string"
+    },
+    "clinical_risk": {
+      "type": "string"
+    },
+    "appeal_available": {
+      "type": "boolean"
+    },
+    "appeal_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "human_reviewer": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "audit_status": {
+      "enum": [
+        "not_reviewed",
+        "review_pending",
+        "reviewed",
+        "noncompliant"
+      ]
+    }
+  }
+}

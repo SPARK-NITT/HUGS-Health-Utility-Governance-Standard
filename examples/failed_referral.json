@@ -1,0 +1,11 @@
+{
+  "event_id": "FAIL-001",
+  "event_type": "failed_referral",
+  "episode_id": "EP-003",
+  "detected_at": "2026-08-15T15:00:00Z",
+  "severity": "major",
+  "description": "Referral sent but receipt and acceptance were not confirmed.",
+  "responsibility_status": "unassigned",
+  "responsible_entity": null,
+  "corrective_action": "Assign transition owner and confirm receiving responsibility."
+}

@@ -1,0 +1,12 @@
+control_id: HUGS-C006
+title: "Consequential Automation Review"
+doctrine: "HUGS-D08"
+obligation: "Automated denial, triage, discharge, authorization, or access decisions with material health consequences must provide accountable human review."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: critical
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

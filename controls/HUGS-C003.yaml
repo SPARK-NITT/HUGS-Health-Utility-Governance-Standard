@@ -1,0 +1,12 @@
+control_id: HUGS-C003
+title: "Closed-Loop Referral"
+doctrine: "HUGS-D04"
+obligation: "A referral is not complete when it is sent. It is complete when receipt is confirmed, responsibility is accepted, and material clinical information is transferred."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: major
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

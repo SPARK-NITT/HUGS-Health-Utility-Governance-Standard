@@ -1,0 +1,12 @@
+control_id: HUGS-C002
+title: "Named Clinical Owner"
+doctrine: "HUGS-D04"
+obligation: "Every active episode of significant care must identify a clinician or accountable clinical team responsible for the current care trajectory."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: critical
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

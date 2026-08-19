@@ -1,0 +1,12 @@
+control_id: HUGS-C011
+title: "Excellence Attribution"
+doctrine: "HUGS-D05"
+obligation: "Institutional advancement systems should recognize clinical outcomes, difficult-case competence, safety, continuity, teaching, research, and peer contribution rather than rely predominantly on revenue production."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: major
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

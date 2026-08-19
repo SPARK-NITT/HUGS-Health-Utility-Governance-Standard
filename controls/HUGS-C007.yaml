@@ -1,0 +1,12 @@
+control_id: HUGS-C007
+title: "Material Price Transparency"
+doctrine: "HUGS-D06"
+obligation: "Patients must receive understandable material financial information before non-emergency care when reasonably possible."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: major
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

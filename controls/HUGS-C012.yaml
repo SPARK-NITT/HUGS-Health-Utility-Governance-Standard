@@ -1,0 +1,12 @@
+control_id: HUGS-C012
+title: "Encounter Fragmentation Review"
+doctrine: "HUGS-D05"
+obligation: "Organizations must be capable of detecting whether operational or financial structures incentivize unnecessary fragmentation of a clinically coherent episode into multiple revenue events."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: major
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

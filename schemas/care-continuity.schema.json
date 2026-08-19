@@ -1,0 +1,112 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:spark-nitt:hugs:schema:care-continuity:v0.2.1",
+  "title": "HUGS Care Continuity Record",
+  "type": "object",
+  "required": [
+    "patient_reference",
+    "episode_id",
+    "primary_clinical_owner",
+    "current_stage",
+    "next_required_action",
+    "closure_status"
+  ],
+  "properties": {
+    "patient_reference": {
+      "type": "string"
+    },
+    "episode_id": {
+      "type": "string"
+    },
+    "primary_clinical_owner": {
+      "type": "string"
+    },
+    "current_stage": {
+      "type": "string"
+    },
+    "active_diagnoses": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "care_plan_reference": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "current_medications": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pending_tests": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "pending_referrals": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "transition_owner": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "next_required_action": {
+      "type": "string"
+    },
+    "next_required_date": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "patient_contact_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "unresolved_risks": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "escalation_status": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "closure_condition": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "closure_status": {
+      "enum": [
+        "open",
+        "transferred",
+        "closed"
+      ]
+    },
+    "closure_timestamp": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    }
+  }
+}

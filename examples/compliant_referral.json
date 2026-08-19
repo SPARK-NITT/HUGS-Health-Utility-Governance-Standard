@@ -1,0 +1,17 @@
+{
+  "transition_id": "TR-002",
+  "episode_id": "EP-004",
+  "sending_entity": "Example Clinic",
+  "receiving_entity": "Example Specialist",
+  "sending_owner": "Primary care clinician",
+  "receiving_owner": "Specialist intake team",
+  "clinical_summary": "Referral for diagnostic review.",
+  "pending_actions": [
+    "send records",
+    "confirm appointment",
+    "document result"
+  ],
+  "acceptance_status": "accepted",
+  "accepted_at": "2026-08-15T16:00:00Z",
+  "unresolved_risks": []
+}

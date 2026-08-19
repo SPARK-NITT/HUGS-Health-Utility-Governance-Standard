@@ -1,0 +1,12 @@
+control_id: HUGS-C004
+title: "Discharge Continuity Verification"
+doctrine: "HUGS-D04"
+obligation: "Discharge must include verified next-step ownership when foreseeable harm could result from a gap."
+applies_to: [hospital, physician_practice, clinic, insurer, rehabilitation, telehealth, health_technology]
+evidence_required:
+  - policy
+  - record
+  - responsible_authority
+severity: critical
+exceptions: []
+remediation: "Document gap, assign responsible authority, create corrective action, and verify closure."

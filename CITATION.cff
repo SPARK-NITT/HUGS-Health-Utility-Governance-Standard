@@ -1,0 +1,7 @@
+cff-version: 1.2.0
+title: H.U.G.S. - Health Utility Governance Standard
+version: 0.2.1
+authors:
+  - name: SPARK-NITT
+message: Cite this repository as SPARK-NITT, H.U.G.S. - Health Utility Governance Standard, v0.2.1, 2026.
+repository-code: https://github.com/SPARK-NITT/HUGS-Health-Utility-Governance-Standard
